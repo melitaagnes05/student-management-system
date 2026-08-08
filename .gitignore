@@ -1,12 +1,5 @@
+.env
 venv/
 __pycache__/
 *.pyc
-
-.env
-
-logs/project.log
-
-.idea/
-.vscode/
-
-.DS_Store
+logs/

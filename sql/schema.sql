@@ -1,0 +1,70 @@
+CREATE DATABASE IF NOT EXISTS student_management;
+
+USE student_management;
+
+CREATE TABLE users (
+    UserID INT AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL UNIQUE,
+    Password VARCHAR(255) NOT NULL,
+    Role ENUM('Admin','Teacher','Student') NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE departments (
+    DepartmentID INT AUTO_INCREMENT PRIMARY KEY,
+    DepartmentName VARCHAR(100) NOT NULL UNIQUE,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE classes (
+    ClassID INT AUTO_INCREMENT PRIMARY KEY,
+    ClassName VARCHAR(50) NOT NULL,
+    DepartmentID INT NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (DepartmentID) REFERENCES departments(DepartmentID)
+);
+
+CREATE TABLE students (
+    StudentID INT AUTO_INCREMENT PRIMARY KEY,
+    StudentName VARCHAR(100) NOT NULL,
+    Age INT NOT NULL,
+    Gender ENUM('Male','Female','Other') NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Phone VARCHAR(15) NOT NULL UNIQUE,
+    Address TEXT,
+    DepartmentID INT NOT NULL,
+    ClassID INT NOT NULL,
+    AdmissionDate DATE NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (DepartmentID) REFERENCES departments(DepartmentID),
+    FOREIGN KEY (ClassID) REFERENCES classes(ClassID)
+);
+
+CREATE TABLE teachers (
+    TeacherID INT AUTO_INCREMENT PRIMARY KEY,
+    TeacherName VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Phone VARCHAR(15) NOT NULL UNIQUE,
+    DepartmentID INT NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (DepartmentID) REFERENCES departments(DepartmentID)
+);
+
+CREATE TABLE attendance (
+    AttendanceID INT AUTO_INCREMENT PRIMARY KEY,
+    StudentID INT NOT NULL,
+    AttendanceDate DATE NOT NULL,
+    Status ENUM('Present','Absent') NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (StudentID) REFERENCES students(StudentID)
+);
+
+CREATE TABLE marks (
+    MarkID INT AUTO_INCREMENT PRIMARY KEY,
+    StudentID INT NOT NULL,
+    Subject VARCHAR(100) NOT NULL,
+    Marks INT NOT NULL,
+    Semester INT NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (StudentID) REFERENCES students(StudentID)
+);
