@@ -4,6 +4,7 @@ from services.teacher_service import teacher_menu
 from services.department_service import department_menu
 from services.class_service import class_menu
 from services.attendance_service import attendance_menu
+from services.marks_service import marks_menu
 
 
 def dashboard():
@@ -42,7 +43,7 @@ def dashboard():
             attendance_menu()
 
         elif choice == "6":
-            print("Marks Module Coming Soon")
+            marks_menu()
 
         elif choice == "7":
             print("Reports Module Coming Soon")
