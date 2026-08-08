@@ -1,5 +1,6 @@
 from services.auth_service import login, logout
 from services.student_service import student_menu
+from services.teacher_service import teacher_menu
 
 
 def dashboard():
@@ -26,7 +27,7 @@ def dashboard():
             student_menu()
 
         elif choice == "2":
-            print("Teacher Module Coming Soon")
+            teacher_menu()
 
         elif choice == "3":
             print("Department Module Coming Soon")
@@ -48,13 +49,10 @@ def dashboard():
             break
 
         elif choice == "9":
-
             print("\nThank you for using Student Management System.")
-
             exit()
 
         else:
-
             print("Invalid Choice")
 
 
@@ -74,13 +72,11 @@ def home_menu():
         if choice == "1":
 
             if login():
-
                 dashboard()
 
         elif choice == "2":
 
             print("\nThank you for using Student Management System.")
-
             break
 
         else:
