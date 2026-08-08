@@ -110,7 +110,7 @@ student-management-system/
 ├── main.py
 ├── README.md
 └── requirements.txt
-
+```
 ## Screenshots
 
 ### Login
