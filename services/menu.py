@@ -1,7 +1,7 @@
 from services.auth_service import login, logout
 from services.student_service import student_menu
 from services.teacher_service import teacher_menu
-
+from services.department_service import department_menu
 
 def dashboard():
 
@@ -30,7 +30,7 @@ def dashboard():
             teacher_menu()
 
         elif choice == "3":
-            print("Department Module Coming Soon")
+            department_menu()
 
         elif choice == "4":
             print("Class Module Coming Soon")
