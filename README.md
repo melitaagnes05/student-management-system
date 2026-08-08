@@ -6,7 +6,7 @@ A console-based Student Management System built with Python and MySQL. The appli
 
 ### Authentication
 - Secure login system
-- Role-based user information
+- Role information for users
 - Password hashing using bcrypt
 - Logout functionality
 
@@ -40,7 +40,7 @@ A console-based Student Management System built with Python and MySQL. The appli
 
 ### Attendance Management
 - Mark attendance
-- View attendance
+- View attendance records
 - Search student attendance
 - Generate attendance reports
 - Calculate attendance percentage
@@ -61,14 +61,21 @@ A console-based Student Management System built with Python and MySQL. The appli
 - Attendance report
 - Marks report
 
+---
+
 ## Tech Stack
 
-- **Language:** Python
-- **Database:** MySQL
-- **Authentication:** bcrypt
-- **Database Connector:** mysql-connector-python
-- **Configuration:** python-dotenv
-- **Version Control:** Git & GitHub
+| Technology | Purpose |
+|---|---|
+| Python | Application development |
+| MySQL | Database management |
+| bcrypt | Password hashing |
+| mysql-connector-python | MySQL connectivity |
+| python-dotenv | Environment configuration |
+| Git | Version control |
+| GitHub | Source code management |
+
+---
 
 ## Project Structure
 
@@ -103,3 +110,25 @@ student-management-system/
 ├── main.py
 ├── README.md
 └── requirements.txt
+
+## Screenshots
+
+### Login
+
+![Login](screenshots/login.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Student Management
+
+![Student Management](screenshots/students.png)
+
+### Marks Management
+
+![Marks Management](screenshots/marks.png)
+
+### Reports
+
+![Reports](screenshots/reports.png)
