@@ -5,7 +5,7 @@ from services.department_service import department_menu
 from services.class_service import class_menu
 from services.attendance_service import attendance_menu
 from services.marks_service import marks_menu
-
+from services.report_service import report_menu
 
 def dashboard():
 
@@ -46,8 +46,8 @@ def dashboard():
             marks_menu()
 
         elif choice == "7":
-            print("Reports Module Coming Soon")
-
+            report_menu()
+    
         elif choice == "8":
             logout()
             break
